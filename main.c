@@ -6,7 +6,7 @@
 /*   By: jmora-ro <jmora-ro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:28:17 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/05/07 16:04:30 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/05/07 16:08:22 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /* Imprimir en el formato indicado */
 static int	ft_print_args(char format, va_list ap)
 {
-
+	write(1, 'a', 1);
 }
 
 /* Process arguments from the main printf function, also print non-formatted chars */
