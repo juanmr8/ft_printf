@@ -6,7 +6,7 @@
 /*   By: jmora-ro <jmora-ro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:28:17 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/05/07 15:53:52 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/05/07 16:04:30 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	ft_process_args(char *arg, va_list ap)
 		}
 		else {
 			write(1, arg[i], 1);
-			count+;
+			count++;
 			i++;
 		}
 	}
