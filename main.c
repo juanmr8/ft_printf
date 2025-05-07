@@ -6,7 +6,7 @@
 /*   By: jmora-ro <jmora-ro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:28:17 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/05/07 19:03:40 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/05/07 19:14:56 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,8 @@ int	ft_printf(char const *arg, ...)
 
 int	main(void)
 {
-	int count = ft_printf("Print %s %d %d\n", "hola", 4, 2);
-	int	realCount = printf("Print %s %d %d\n", "hola", 4, 2);
+	int count = ft_printf("Print %s %d %u\n", "hola", 4, -2);
+	int	realCount = printf("Print %s %d %u\n", "hola", 4, -2);
 	ft_printf("Cuenta con mi printf %d\n", count);
 	printf("Cuenta con el printf off %d\n", realCount);
 	return (0);

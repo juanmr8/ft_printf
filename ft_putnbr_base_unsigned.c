@@ -6,7 +6,7 @@
 /*   By: jmora-ro <jmora-ro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 18:34:38 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/05/07 18:35:13 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/05/07 19:16:19 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int ft_putnbr_base_unsigned(unsigned int nbr, char *base, int count)
     }
 
     if (nbr >= base_value)
-        ft_putnbr_base_unsigned(nbr / base_value, base, count++);
-    ft_putchar(base[nbr % base_value]);
+        count = ft_putnbr_base_unsigned(nbr / base_value, base, count);
+    count += ft_putchar(base[nbr % base_value]);
     return (count);
 }
