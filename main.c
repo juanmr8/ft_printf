@@ -6,7 +6,7 @@
 /*   By: jmora-ro <jmora-ro@42.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:28:17 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/05/07 13:08:26 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/05/07 13:26:36 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_print_args(char format, va_list ap)
 	
 }
 
-/* Contar numero de argumentos para la función variadica usando partes de split */
+/* Process arguments from the main printf function, also print non-formatted chars */
 static int	ft_process_args(char *arg, va_list ap)
 {
 	int	i;
