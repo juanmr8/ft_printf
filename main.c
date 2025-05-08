@@ -3,27 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmora-ro <jmora-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmora-ro <jmora-ro@42.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:28:17 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/05/07 19:14:56 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/05/08 07:50:26 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "lib.h"
-
-
-static int ft_unsigned_num(int n)
-{
-	unsigned int result;
-
-	if (n < 0)
-		result = UINT_MAX - n;
-	else
-		result = n;
-	return (result);
-}
 
 static int ft_putstr(char *str)
 {
@@ -44,12 +32,9 @@ int	ft_putchar(int c)
 	return (1);
 }
 
-/* Imprimir en el formato indicado */
 static int	ft_print_args(char format, va_list ap)
 {
-	int	count;
 
-	count = 0;
 	if (format == 'c')
 		return (ft_putchar(va_arg(ap, int)));
 	else if (format == 's')
@@ -59,10 +44,8 @@ static int	ft_print_args(char format, va_list ap)
 	else if (format == 'u')
     	return (ft_putnbr_base_unsigned(va_arg(ap, unsigned int), "0123456789", 0));
 
-
 }
 
-/* Process arguments from the main printf function, also print non-formatted chars */
 static int	ft_process_args(const char *arg, va_list ap)
 {
 	int	i;
@@ -79,8 +62,7 @@ static int	ft_process_args(const char *arg, va_list ap)
 			i++;
 		}
 		else {
-			ft_putchar(arg[i]);
-			count++;
+			count += ft_putchar(arg[i]);
 			i++;
 		}
 	}

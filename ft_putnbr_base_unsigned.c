@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base_unsigned.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmora-ro <jmora-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmora-ro <jmora-ro@42.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 18:34:38 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/05/07 19:16:19 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/05/08 07:46:56 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib.h"
-
+/* Print number of n base and unsigned */
 int ft_putnbr_base_unsigned(unsigned int nbr, char *base, int count)
 {
     unsigned int base_value;
