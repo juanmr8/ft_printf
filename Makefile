@@ -1,29 +1,32 @@
-# **************************************************************************** #
-#                                   Makefile                                   #
-# **************************************************************************** #
-
-# Program Name
 NAME = libftprintf.a
+UNAME_M := $(shell uname -m)
 
-# Compiler and Flags
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-# Source Files
-SRCS = ft_printf.c \
-	ft_printf_utils.c
+# Directories
+SRCS_DIR = ./
+UTILS_DIR = ./utils/
+INC_DIR = ./
+
+
+SRCS = $(SRCS_DIR)ft_printf.c
+UTILS_SRCS = $(UTILS_DIR)ft_putnbr_base.c $(UTILS_DIR)ft_putnbr_base_unsigned.c $(UTILS_DIR)ft_strlen.c $(UTILS_DIR)ft_putstr.c $(UTILS_DIR)ft_putchar.c $(UTILS_DIR)ft_print_pointer.c
+
+ALL_SRCS = $(SRCS) $(UTILS_SRCS)
 
 # Object Files
-OBJS = $(SRCS:.c=.o)
+OBJS = $(ALL_SRCS:.c=.o)
 
-# Rules
+INCLUDES = -I$(INC_DIR) -I$(UTILS_DIR)
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)

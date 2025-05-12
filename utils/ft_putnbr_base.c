@@ -3,47 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmora-ro <jmora-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmora-ro <jmora-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 10:25:49 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/05/07 18:47:35 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/05/12 17:33:00 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-static int	ft_strlen(char *str)
-{
-	int	count;
-
-	count = 0;
-	while (*str)
-	{
-		count++;
-		str++;
-	}
-	return (count);
-}
-
-static void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-static void	ft_putstr(char *str)
-{
-	while (*str)
-	{
-		ft_putchar(*str);
-		str++;
-	}
-}
+#include "../ft_printf.h"
 
 int	ft_check_base(char *base)
 {
 	int	i;
-	int	len;
 	int	j;
+	int	len;
 
 	i = 0;
 	j = 0;
@@ -68,30 +41,20 @@ int	ft_check_base(char *base)
 
 int	ft_putnbr_base(int nbr, char *base, int count)
 {
-	int	base_value;
+	long		base_value;
+	long long	num;
 
 	base_value = ft_strlen(base);
 	if (ft_check_base(base) == 0 || base_value < 2)
-	{
 		return (count);
-	}
-	if (nbr == -2147483647)
+	num = (long long)nbr;
+	if (num < 0)
 	{
-		ft_putstr("-2147483647");
-		return (count);
+		count += write(1, "-", 1);
+		num = -num;
 	}
-	if (nbr < 0)
-	{
-		ft_putstr("-");
-		nbr = -nbr;
-	}
-	if (nbr > base_value)
-		count = ft_putnbr_base(nbr / base_value, base, count);
-	count += write(1, &base[nbr % base_value], 1);
+	if (num >= base_value)
+		count = ft_putnbr_base(num / base_value, base, count);
+	count += write(1, &base[num % base_value], 1);
 	return (count);
 }
-/*int	main(void)
-{
-	ft_put_nbr_base(42324, "0123456789");
-	return (0);
-}*/

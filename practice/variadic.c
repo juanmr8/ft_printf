@@ -1,4 +1,4 @@
-#include <stdarg.h>
+/*#include <stdarg.h>
 #include <stdio.h>
 
 float	average(int n, ...)
@@ -12,7 +12,8 @@ float	average(int n, ...)
 	i = 0;
 	while (i < n)
 	{
-		total += va_arg(ap, int); // va_arg calls the next one every time is invoked
+		// va_arg calls the next one every time is invoked
+		total += va_arg(ap, int);
 		i++;
 	}
 	return ((float)total / n);
@@ -25,4 +26,4 @@ int	main(void)
 	average_age = average(3, 10, 15, 20);
 	printf("The Average age is  %f\n", average_age);
 	return (0);
-}
+}*/
