@@ -1,5 +1,4 @@
 NAME = libftprintf.a
-UNAME_M := $(shell uname -m)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
