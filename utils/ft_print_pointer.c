@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_pointer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmora-ro <jmora-ro@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jmora-ro <jmora-ro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:48:29 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/05/12 16:57:05 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/05/14 16:14:09 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_print_pointer(void *ptr)
 	count = 0;
 	if (ptr == NULL)
 	{
-		count += ft_putstr("0x0");
+		count += ft_putstr("(nil)");
 		return (count);
 	}
 	count += ft_putstr("0x");
